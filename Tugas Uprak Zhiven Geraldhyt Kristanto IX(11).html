@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyMusic Player</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #111;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.cover {
+width: 220px;
+height: 220px;
+margin: 0 auto 20px auto;
+border-radius: 8px;
+overflow: hidden;
+}
+
+.cover img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.song-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.artist {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #111;
+    color: white;
+}
+
+.controls button:hover {
+    background: #333;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: gray;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+MyMusic Streaming
+</header>
+
+<div class="container">
+    <div class="cover"><img src="download.jpeg" alt="album cover"></download></div>
+    <div class="song-title">Lagu Natal</div>
+    <div class="artist">Koleksi Lagu Natal Nostalgia</div>
+
+    <audio id="player" src="https://www.youtube.com/watch?v=3qxX5KhCpTk" autoplay loop></audio>
+
+    <div class="controls">
+        <button onclick="playMusic()">Play</button>
+        <button onclick="paMusic()">Pause</button>
+        <button onclick="forcenthem()">Next</button>
+    </div>
+</div>
+
+<footer>
+© 2026 MyMusic. All rights reserved.
+</footer>
+
+<script>
+const player = document.getElementById("player");
+
+function playMusic() {
+    player.play();
+}
+
+function pauseMusic() {
+    player.pause();
+}
+
+function forceAnthem() {
+    player.currentTime = 0;
+    player.play();
+}
+
+player.addEventListener("ended", function() {
+    player.currentTime = 0;
+    player.play();
+    
+    
+});
+</script>
+
+</body>
+</html>
